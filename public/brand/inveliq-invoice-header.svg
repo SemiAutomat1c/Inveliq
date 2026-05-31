@@ -1,0 +1,7 @@
+<svg width="360" height="72" viewBox="0 0 360 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="72" height="72" rx="14" fill="#151B1F"/>
+  <path d="M36 16a20 20 0 1 0 0 40 20 20 0 0 0 0-40Zm0 6v13.5l9.5 5.5" stroke="#12B8A6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18 53h36M25 61h22" stroke="#F7F4EE" stroke-width="4" stroke-linecap="round"/>
+  <text x="94" y="36" fill="#151B1F" font-family="Aptos Display, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="760">Inveliq</text>
+  <text x="96" y="57" fill="#607078" font-family="Aptos, Segoe UI, system-ui, sans-serif" font-size="13">Track time into invoices.</text>
+</svg>
