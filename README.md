@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/brand/inveliq-logo.svg" alt="Inveliq" width="220" />
+  <img src="./public/brand/inveliq-logo-readme.svg" alt="Inveliq" width="220" />
 </p>
 
 <p align="center">
