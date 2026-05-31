@@ -1,41 +1,124 @@
-# Inveliq
+<p align="center">
+  <img src="./public/brand/inveliq-logo.svg" alt="Inveliq" width="220" />
+</p>
 
-Inveliq is a personal freelance time-tracking and invoice app brand system. This starter contains the sharp, calm Inveliq identity, reusable React UI primitives, SVG logo assets, a brand guide, and a sample invoice PDF generator.
+<p align="center">
+  <strong>Track time into invoices.</strong>
+</p>
 
-## Scripts
+<p align="center">
+  A calm personal workspace for tracking freelance work, reviewing billable time, and sharing invoices with clients.
+</p>
 
-- `npm run dev` - start the brand preview app.
-- `npm run convex:dev` - run Convex locally or push functions to the configured dev deployment.
-- `npm run convex:deploy` - deploy Convex functions for production.
-- `npm run build` - typecheck and build the Vite app.
-- `npm run lint` - run ESLint.
-- `npm run test:brand` - check core brand color contrast pairs.
-- `npm run generate:sample-invoice` - generate `docs/sample-invoice.pdf`.
+## About This Project
 
-## Convex Setup
+I built Inveliq for my own freelance workflow: keeping project time organized, turning billable entries into invoices, and checking what has been paid without moving between several tools.
 
-The app is configured for:
+This repository is shared as a personal open-source project. It is not a hosted multi-user service. If you want to use Inveliq, connect your own [Convex](https://www.convex.dev/) project so your clients, projects, time entries, and invoices stay in your own database.
 
-- Cloud URL: `https://judicious-boar-808.convex.cloud`
-- HTTP Actions URL: `https://judicious-boar-808.convex.site`
-- Deployment: `dev:judicious-boar-808`
+## Screenshot
 
-To push the schema and functions to that Convex project, run:
+> A polished dashboard screenshot will be added here soon.
+
+## Features
+
+- Track time against real projects with a live timer.
+- Add, edit, and delete manual time entries.
+- Manage clients and billable projects.
+- Review work through timer, calendar, overview, and reporting views.
+- Create invoices from selected billable entries.
+- Mark invoices as draft, ready, sent, or paid.
+- Share invoices through client-safe public links.
+- Prepare invoice email drafts inside the app.
+- Switch between light and dark themes.
+- Use responsive desktop and mobile navigation.
+
+## Run Your Own Copy
+
+### Requirements
+
+- Node.js 20 or newer
+- npm
+- A free [Convex](https://www.convex.dev/) account
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Connect your own Convex database
+
+Log into Convex and configure a new or existing project:
 
 ```bash
 npx convex login
+npx convex dev --configure
+```
+
+Convex writes your deployment settings to `.env.local`. That file is intentionally ignored by Git.
+
+If you need to configure the values manually, copy the template first:
+
+```bash
+cp .env.example .env.local
+```
+
+Then replace the placeholder values in `.env.local` with the values from your own Convex project.
+
+### 3. Start the app
+
+Run Convex in one terminal:
+
+```bash
 npm run convex:dev
 ```
 
-The current backend uses Convex identity when available and falls back to a personal dev user in anonymous/local mode. Full Convex Auth UI can be layered in next.
+Run Vite in another terminal:
 
-## Brand Assets
+```bash
+npm run dev
+```
 
-- Brand guide: `docs/brand-guidelines.md`
-- Primary logo: `public/brand/inveliq-logo.svg`
-- Compact mark: `public/brand/inveliq-mark.svg`
-- Monochrome mark: `public/brand/inveliq-mark-mono.svg`
-- Invoice header logo: `public/brand/inveliq-invoice-header.svg`
-- Favicon: `public/favicon.svg`
+Open the local URL printed by Vite, usually [http://localhost:5173](http://localhost:5173).
 
-Positioning: Track time. Shape invoices. Know what your work is worth.
+## Scripts
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Vite development server. |
+| `npm run convex:dev` | Sync Convex functions and watch for backend changes. |
+| `npm run convex:deploy` | Deploy Convex functions for production. |
+| `npm run build` | Type-check and create a production build. |
+| `npm run lint` | Run ESLint. |
+| `npm test` | Run the Vitest suite. |
+| `npm run test:brand` | Check core brand color contrast pairs. |
+
+## Project Structure
+
+| Path | Purpose |
+| --- | --- |
+| `src/` | React UI, workspace views, brand tokens, and frontend helpers. |
+| `convex/` | Convex schema, queries, mutations, and generated type bindings. |
+| `public/brand/` | Inveliq logo assets used by the app and invoice views. |
+| `docs/brand-guidelines.md` | Brand voice, logo, color, and invoice guidance. |
+
+## Brand
+
+Inveliq uses a graphite, paper, and signal-teal visual system designed for focused daily work.
+
+- [Brand guidelines](./docs/brand-guidelines.md)
+- [Primary logo](./public/brand/inveliq-logo.svg)
+- [Compact mark](./public/brand/inveliq-mark.svg)
+- [Monochrome mark](./public/brand/inveliq-mark-mono.svg)
+- [Invoice header logo](./public/brand/inveliq-invoice-header.svg)
+
+## Notes
+
+- Authentication is intentionally out of scope for this personal version.
+- Public invoice links are secret-link views intended for sharing directly with a client.
+- Payment processing, external calendar sync, and hosted email delivery are not included.
+
+## License
+
+No license has been added yet. Please treat the repository as source-available for personal reference unless a license is added later.
