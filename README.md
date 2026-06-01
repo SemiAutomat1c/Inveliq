@@ -82,6 +82,39 @@ npm run dev
 
 Open the local URL printed by Vite, usually [http://localhost:5173](http://localhost:5173).
 
+## Deploy On Vercel
+
+This repo is now configured for Vercel deployment as a Vite single-page app. The committed [vercel.json](./vercel.json) adds the build settings and the SPA rewrite needed so direct visits to routes like `/invoice/:token` resolve to `index.html` instead of a Vercel 404.
+
+### 1. Import the repository
+
+Import the GitHub repository into Vercel or deploy it with the Vercel CLI.
+
+### 2. Add environment variables in Vercel
+
+Set this required variable in your Vercel project:
+
+- `VITE_CONVEX_URL`: your Convex client URL, for example `https://your-deployment.convex.cloud`
+
+Optional:
+
+- `VITE_CONVEX_SITE_URL`: useful if you want your Vercel and local environment templates to stay aligned
+- `CONVEX_DEPLOYMENT`: not required by the deployed frontend, but still useful for local Convex CLI workflows
+
+### 3. Deploy
+
+Vercel can use the committed defaults:
+
+- Build command: `npm run build`
+- Output directory: `dist`
+
+If you prefer the CLI:
+
+```bash
+npm install -g vercel
+vercel
+```
+
 ## Scripts
 
 | Command | Purpose |
